@@ -1,1 +1,16 @@
-<p>buscar-producto works!</p>
+
+<a routerLink="/administracion/crear-producto" class="new-product">Nuevo Producto</a>
+<div class="main-container">
+  <div class="products-container">
+    <ng-container *ngFor="let producto of listadoRegistros">
+      <div class="card">
+          <span class="name-product">{{producto.nombre}}</span>
+          <div class="image">
+              <img src="{{producto.imagen}}" alt="">
+          </div>
+          <p class="description-product">{{producto.precio}}</p>
+          <a routerLink="/administracion/editar-producto/{{producto.id}}" class="btn">Editar Producto</a>
+      </div>
+    </ng-container>
+  </div>
+</div>

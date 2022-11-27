@@ -1,21 +1,30 @@
 <nav>
-  <div class="nav-wrapper">
-    <a routerLink="/inicio" class="brand-logo">Logo</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-      ><i class="material-icons">menu</i></a
+  <a routerLink="/inicio" class="brand-logo">
+    <div class="left">
+      <svg
+      enable-background="new 0 0 300 302.5"
+      version="1.1"
+      viewBox="0 0 300 302.5"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
     >
-    <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/administracion/personas">Personas</a></li>
-      <li><a routerLink="/administracion/productos">Productos</a></li>
-      <li><a routerLink="/seguridad/cambioClave">Cambiar clave</a></li>
-      <li><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
-    </ul>
-  </div>
+      <style type="text/css">
+        .st01 {
+          fill: #fff;
+        }
+      </style>
+      <path
+        class="st01"
+        d="m 253.28781,85.475343 c -3.14547,-1.456748 -6.54696,-2.195939 -10.1095,-2.195939 -13.86074,0 -28.49793,11.512155 -36.4175,28.638556 -10.24651,22.11084 -5.84502,45.20487 10.05781,52.59197 3.13586,1.43872 6.52532,2.1683 10.07224,2.1683 13.89319,0 28.54,-11.50495 36.44755,-28.63255 10.21166,-22.14329 5.79454,-45.236116 -10.0506,-52.570337 z m -73.93477,19.223787 c 20.34038,0 36.27446,-22.633683 36.27446,-51.527054 0,-28.887361 -15.93408,-51.5162345 -36.27446,-51.5162345 -20.35962,0 -36.30692,22.6288735 -36.30692,51.5162345 0,28.894573 15.9473,51.527054 36.30692,51.527054 z m -134.529239,61.9779 c 3.546917,0 6.935178,-0.72958 10.111898,-2.18753 15.819899,-7.35586 20.224999,-30.44147 10.024157,-52.56192 C 57.045099,94.797569 42.403099,83.289019 28.521925,83.289019 c -3.550523,0 -6.943592,0.73198 -10.097475,2.18392 C 2.5829163,92.803555 -1.8366072,115.89397 8.3666386,138.05289 16.281396,155.17328 30.931809,166.67582 44.821397,166.67703 Z m 47.517389,-61.9779 c 20.3476,0 36.28529,-22.633683 36.28529,-51.527054 0.001,-28.887361 -15.93769,-51.5162345 -36.28529,-51.5162345 -20.345193,0 -36.282881,22.6288735 -36.282881,51.5162345 0,28.894573 15.937688,51.527054 36.282881,51.527054 z m 127.73829,90.69578 c -2.84619,-4.48443 -23.70701,-36.98 -41.53655,-54.16891 -14.87517,-14.28262 -37.13986,-14.69608 -39.66393,-14.69608 -0.22957,10e-4 -0.46034,0.01 -0.68631,0.0276 h -5.3979 c -2.38464,0 -23.75148,0.40625 -39.379068,14.47373 -19.281478,17.37641 -40.615865,52.4237 -42.108671,54.89368 -11.301817,17.8692 -18.228582,29.49073 -18.228582,42.41156 0,23.28272 17.059097,38.32737 43.459649,38.32737 H 195.18255 c 26.39334,0 43.44763,-15.05907 43.44763,-38.36584 0,-13.03501 -6.94359,-24.63971 -18.27546,-42.49208 -0.0889,-0.13943 -0.18029,-0.27765 -0.27524,-0.41107 z"
+      />
+    </svg>
+  </div></a>
+  <ul class="">
+    <li><a routerLink="/administracion/productos">Productos</a></li>
+    <li><a routerLink="/seguridad/identificacion" *ngIf="!seInicioSesion">Iniciar sesión</a></li>    
+    <li class="userActions" (click)="actionSesion(this.closeSesion)">
+      <a *ngIf="seInicioSesion">{{dataUser.datos["nombre"]}}</a>
+      <div class="actions" #closeSesion (click)="closeSesionUser()">Cerrar sesión</div>
+    </li>
+  </ul>
 </nav>
-
-<ul class="sidenav" id="mobile-demo">
-  <li><a routerLink="/administracion/personas">Personas</a></li>
-  <li><a routerLink="/administracion/productos">Productos</a></li>
-  <li><a routerLink="/seguridad/cambioClave">Cambiar clave</a></li>
-  <li><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
-</ul>

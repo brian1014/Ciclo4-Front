@@ -1,0 +1,48 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8860d0;
+    padding: 10px;
+    height: 65px;
+}
+svg{
+    height: 40px;
+}
+
+nav > ul{
+    display: flex;
+    gap: 10px;
+}
+
+nav > ul > li{
+    list-style: none;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.userActions{
+    cursor: pointer;
+}
+
+.userActions a{
+    cursor: pointer;
+}
+
+.actions{
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 0 20px #0000003d;
+    border-radius: 10px;
+    display: none;
+}
+
+.actions-show{
+    display: block;
+}
